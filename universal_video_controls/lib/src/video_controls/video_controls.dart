@@ -281,7 +281,7 @@ class VideoControlsState extends State<VideoControls>
 
     if (newParams != currentParams) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (!context.mounted) {
+        if (!mounted || !context.mounted) {
           cancelSubscriptions();
           return;
         }
